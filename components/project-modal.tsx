@@ -43,9 +43,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
               <div className="flex gap-2 overflow-x-auto pb-2">
                 <button
                   onClick={() => setActiveImage(project.image)}
-                  className={`flex-shrink-0 relative w-20 h-20 rounded-md overflow-hidden border-2 ${
-                    activeImage === project.image ? "border-primary" : "border-border/40"
-                  }`}
+                  className={`flex-shrink-0 relative w-20 h-20 rounded-md overflow-hidden border-2 ${activeImage === project.image ? "border-primary" : "border-border/40"
+                    }`}
                 >
                   <Image src={project.image || "/placeholder.svg"} alt="Main" fill className="object-cover" />
                 </button>
@@ -53,9 +52,8 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
                   <button
                     key={index}
                     onClick={() => setActiveImage(screenshot)}
-                    className={`flex-shrink-0 relative w-20 h-20 rounded-md overflow-hidden border-2 ${
-                      activeImage === screenshot ? "border-primary" : "border-border/40"
-                    }`}
+                    className={`flex-shrink-0 relative w-20 h-20 rounded-md overflow-hidden border-2 ${activeImage === screenshot ? "border-primary" : "border-border/40"
+                      }`}
                   >
                     <Image
                       src={screenshot || "/placeholder.svg"}
@@ -82,12 +80,17 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             </div>
 
             <div className="flex flex-col gap-3">
-              <Button asChild className="w-full">
-                <Link href={project.githubUrl} target="_blank">
-                  <Github className="mr-2 h-5 w-5" />
-                  View Source Code
-                </Link>
-              </Button>
+              {project.githubUrl && (
+                <Button asChild className="w-full">
+                  <Link href={project.githubUrl} target="_blank">
+                    <Github className="mr-2 h-5 w-5" />
+                    View Source Code
+                  </Link>
+                </Button>
+              )
+
+              }
+
 
               {project.demoUrl && (
                 <Button asChild variant="outline" className="w-full">
