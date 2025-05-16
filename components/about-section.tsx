@@ -38,10 +38,10 @@ export default function AboutSection() {
               <div className="absolute">
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244511.9271574595!2d96.17133955385268!3d16.75146866010315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30c1949e223e196b%3A0x56fbd271f8080bb4!2sYangon%2C%20Myanmar%20(Burma)!5e0!3m2!1sen!2ssg!4v1746420309930!5m2!1sen!2ssg"
-                  width="700"
-                  height="500"
+                  width="600"
+                  height="450"
                   style={{ border: 0 }}
-                  allowFullScreen={true}
+                  allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>

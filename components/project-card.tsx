@@ -22,9 +22,9 @@ export interface Project {
   solutions?: string[]
   features?: string[]
   contributions?: string[]
-  githubUrl: string | null
-  demoUrl?: string | null
-  prodUrl?: string | null
+  githubUrl: string
+  demoUrl?: string
+  prodUrl?: string
 }
 
 interface ProjectCardProps {
@@ -71,14 +71,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </div>
           </CardContent>
           <CardFooter className="flex justify-between">
-            {project.githubUrl && (
-              <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
-                <Link href={project.githubUrl} target="_blank">
-                  <Github className="mr-2 h-4 w-4" />
-                  Code
-                </Link>
-              </Button>
-            )}
+            <Button variant="outline" size="sm" asChild onClick={(e) => e.stopPropagation()}>
+              <Link href={project.githubUrl} target="_blank">
+                <Github className="mr-2 h-4 w-4" />
+                Code
+              </Link>
+            </Button>
             {project.demoUrl && (
               <Button size="sm" asChild onClick={(e) => e.stopPropagation()}>
                 <Link href={project.demoUrl} target="_blank">

@@ -1,7 +1,6 @@
 import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "Developer Portfolio | React & React Native Developer",
@@ -19,7 +18,6 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
-          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>
