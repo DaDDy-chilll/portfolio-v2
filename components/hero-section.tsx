@@ -140,7 +140,7 @@ export default function HeroSection() {
               <Button asChild variant="outline" size="lg">
                 <Link href="#contact">Contact Me</Link>
               </Button>
-              
+
               <Button asChild variant="outline" size="lg" className="gap-2">
                 <a href="/documents/Paing_Sett_Kyaw_Resume.pdf" download>
                   <Download className="h-4 w-4" />

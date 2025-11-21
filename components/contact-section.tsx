@@ -26,12 +26,16 @@ export default function ContactSection() {
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+  setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
+  try {
+    await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    })
 
     toast({
       title: "Message sent!",
@@ -39,8 +43,17 @@ export default function ContactSection() {
     })
 
     setFormData({ name: "", email: "", message: "" })
-    setIsSubmitting(false)
+  } catch (error) {
+    toast({
+      title: "Error",
+      description: "Something went wrong. Try again later.",
+      variant: "destructive",
+    })
   }
+
+  setIsSubmitting(false)
+}
+
 
   return (
     <section id="contact" className="py-20">
