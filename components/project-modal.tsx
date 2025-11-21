@@ -82,12 +82,14 @@ export default function ProjectModal({ project, isOpen, onClose }: ProjectModalP
             </div>
 
             <div className="flex flex-col gap-3">
-              <Button asChild className="w-full">
+            {project.githubUrl && (
+                <Button asChild className="w-full">
                 <Link href={project.githubUrl} target="_blank">
                   <Github className="mr-2 h-5 w-5" />
                   View Source Code
                 </Link>
               </Button>
+            )}
 
               {project.demoUrl && (
                 <Button asChild variant="outline" className="w-full">

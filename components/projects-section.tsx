@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import ProjectCard from "@/components/project-card"
-import { useState } from "react"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { motion } from "framer-motion";
+import ProjectCard from "@/components/project-card";
+import { useState } from "react";
+import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Real World Projects
 const realWorldProjects = [
@@ -11,53 +11,73 @@ const realWorldProjects = [
     id: 1,
     title: "Japan Job",
     description:
-      "A comprehensive job-matching platform connecting Myanmar professionals with Japanese companies, featuring three integrated applications.",
+      "A multi-platform job-matching system connecting Myanmar professionals with Japanese employers. Includes a React Native mobile app, user web portal, company web portal, and admin dashboard.",
     fullDescription:
-      "Japan Job is a multi-platform solution designed to streamline the job matching process between Myanmar professionals and Japanese companies. The platform consists of three interconnected applications: an admin website for platform management, a company website for employers, and a mobile application for job seekers.",
-    image: "/placeholder.svg?height=300&width=500&text=Japan+Job",
+      "Japan Job is a complete recruitment ecosystem designed to streamline hiring between Myanmar job seekers and Japanese companies. The platform consists of four integrated applications: (1) a React Native mobile app for users, (2) a user web application, (3) a company web application for employers, and (4) an admin dashboard for platform management. I developed the user mobile application, user web app, and company web portal.",
+    image: "/japanjob/logo.png",
     screenshots: [
-      "/placeholder.svg?height=300&width=500&text=Company+Website",
-      "/placeholder.svg?height=300&width=500&text=User+App",
-      "/placeholder.svg?height=300&width=500&text=Admin+Panel",
+      "/japanjob/client.png",
+      "/japanjob/client2.png",
+      "/japanjob/client3.png",
+      "/japanjob/client4.png",
+      "/japanjob/admin.png",
+      "/japanjob/mobile1.jpg",
+      "/japanjob/mobile2.jpg",
+      "/japanjob/mobile3.jpg",
+      "/japanjob/mobile4.jpg",
     ],
-    techStack: ["React", "React Native", "Tailwind CSS", "TanStack Query", "Expo", "Node.js"],
+    techStack: [
+      "React Native",
+      "React",
+      "Tailwind CSS",
+      "TanStack Query",
+      "Expo",
+      "Node.js",
+      "REST APIs",
+    ],
     features: [
-      "Company website for posting jobs and managing applications",
-      "Tinder-style mobile app for job seekers to find and apply for positions",
-      "Interview scheduling and calendar management",
-      "Real-time messaging between employers and candidates",
-      "Admin dashboard for platform oversight",
+      "User mobile app for browsing jobs, swiping, and applying",
+      "Company web portal for posting jobs and reviewing applicants",
+      "User web platform for managing profiles and tracking applications",
+      "Interview scheduling with built-in calendar tools",
+      "Real-time communication between employers and job seekers",
     ],
     challenges: [
-      "Creating a seamless experience across three different platforms",
-      "Implementing real-time messaging and notification systems",
-      "Building an intuitive swipe-based job matching interface",
+      "Maintaining consistent UX across mobile and web platforms",
+      "Implementing reliable real-time messaging",
+      "Building an intuitive swipe-to-apply interface on mobile",
     ],
     solutions: [
-      "Used React and React Native with shared component libraries",
-      "Implemented WebSockets for real-time communication",
-      "Designed custom gesture handlers for the mobile application",
+      "Shared UI/logic patterns between React and React Native apps",
+      "Used WebSockets for fast and stable real-time chat",
+      "Custom gesture handlers and animations for swipe-based job matching",
     ],
     contributions: [
-      "Developed the company website with React and Tailwind CSS",
-      "Built the job posting and interview management system",
-      "Created the user application with React Native and Expo",
-      "Implemented the swipe-based job matching interface",
+      "Developed the React Native user mobile application (Expo)",
+      "Built the user web application in React & Tailwind CSS",
+      "Built the company web portal for job posting and candidate management",
+      "Integrated TanStack Query for efficient server-state management",
+      "Collaborated with backend team to integrate REST API endpoints",
     ],
-    githubUrl: "https://github.com",
-    prodUrl: "https://japanjob.jp",
+    githubUrl: "",
+    demoUrl: "https://japanjob.jp",
+    googleUrl: "https://play.google.com/store/apps/details?id=com.japanjob.app",
+    appStoreUrl: "https://apps.apple.com/jp/app/japan-job/id6446256287",
   },
   {
     id: 2,
-    title: "Document Order System",
-    description: "A paperless purchase order management system for hospitals, streamlining the procurement process.",
+    title: "Document Order System For DMH",
+    description:
+      "A paperless purchase order management system for hospitals, streamlining the procurement process.",
     fullDescription:
       "The Document Order System is a comprehensive solution designed to eliminate paper-based purchase orders in hospital environments. The system digitizes the entire procurement workflow, from requisition to approval, ordering, and delivery confirmation. It includes role-based access control, approval chains, inventory integration, and comprehensive reporting.",
-    image: "/placeholder.svg?height=300&width=500&text=Document+Order+System",
+    image: "/dmh/logo.png",
     screenshots: [
-      "/placeholder.svg?height=300&width=500&text=Dashboard",
-      "/placeholder.svg?height=300&width=500&text=Order+Form",
-      "/placeholder.svg?height=300&width=500&text=Approval+Workflow",
+      "/dmh/client.png",
+      "/dmh/dmh1.png",
+      "/dmh/dmh2.png",
+      // "/dmh/client2.png",
+      // "/dmh/admin.png",
     ],
     techStack: ["React", "Node.js", "Express", "MongoDB", "Material UI"],
     features: [
@@ -77,21 +97,55 @@ const realWorldProjects = [
       "Built comprehensive access controls and audit logging",
       "Designed a simple, step-by-step interface with contextual help",
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://vercel.com",
+    githubUrl: "",
+    demoUrl: "",
+  },
+    {
+    id: 3,
+    title: "Document Order System For Parami",
+    description:
+      "A paperless purchase order management system for hospitals, streamlining the procurement process.",
+    fullDescription:
+      "The Document Order System is a comprehensive solution designed to eliminate paper-based purchase orders in hospital environments. The system digitizes the entire procurement workflow, from requisition to approval, ordering, and delivery confirmation. It includes role-based access control, approval chains, inventory integration, and comprehensive reporting.",
+    image: "/parami/logo.jpg",
+    screenshots: [
+      "/parami/parami1.png",
+      "/parami/parami2.png",
+      "/parami/parami3.png",
+    ],
+    techStack: ["React", "Node.js", "Express", "MongoDB", "Material UI"],
+    features: [
+      "Digital purchase order creation and management",
+      "Single-level approval workflows",
+      "Real-time order tracking",
+      "Document history and audit trails",
+      "Reporting and analytics dashboard",
+    ],
+    challenges: [
+      "Replicating complex paper-based approval workflows in digital form",
+      "Ensuring security and compliance with healthcare regulations",
+      "Creating an intuitive interface for users with varying technical skills",
+    ],
+    solutions: [
+      "Implemented a flexible workflow engine to model existing processes",
+      "Built comprehensive access controls and audit logging",
+      "Designed a simple, step-by-step interface with contextual help",
+    ],
+    githubUrl: "",
+    demoUrl: "",
   },
   {
-    id: 3,
+    id: 4,
     title: "Pharmacy POS System",
     description:
       "A point-of-sale system for pharmacies that tracks inventory, manages transactions, and generates reports.",
     fullDescription:
       "This comprehensive POS system is specifically designed for pharmacies, handling everything from inventory management to sales transactions and financial reporting. The system tracks medication stock levels, expiration dates, and batch numbers while processing sales, returns, and providing detailed financial analytics.",
-    image: "/placeholder.svg?height=300&width=500&text=Pharmacy+POS",
+    image: "/pos/logo.png",
     screenshots: [
-      "/placeholder.svg?height=300&width=500&text=Sales+Interface",
-      "/placeholder.svg?height=300&width=500&text=Inventory",
-      "/placeholder.svg?height=300&width=500&text=Reports",
+      "/pos/client.png",
+      // "/pos/client2.png",
+      // "/pos/admin.png",
     ],
     techStack: ["React", "NestJS", "PostgreSQL", "Redux", "Chart.js"],
     features: [
@@ -111,21 +165,30 @@ const realWorldProjects = [
       "Implemented caching and optimized queries for performance",
       "Created customizable dashboard with interactive visualizations",
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://vercel.com",
+    githubUrl: "",
+    demoUrl: "https://pos.y-care.app/",
   },
-]
+];
 
 // Personal Projects
 const personalProjects = [
   {
     id: 4,
     title: "Todo App",
-    description: "A full-stack todo application with user authentication and task management features.",
+    description:
+      "A full-stack todo application with user authentication and task management features.",
     fullDescription:
       "This todo application allows users to create accounts, manage tasks, set priorities, and track completion status. It features user authentication, task filtering, and responsive design for both desktop and mobile use.",
-    image: "/placeholder.svg?height=300&width=500&text=Todo+App",
-    techStack: ["HTML", "CSS", "JavaScript", "EJS", "Node.js", "Express", "MongoDB"],
+    image: "/todo/logo.png",
+    techStack: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "EJS",
+      "Node.js",
+      "Express",
+      "MongoDB",
+    ],
     features: [
       "User authentication and account management",
       "Task creation, editing, and deletion",
@@ -133,16 +196,18 @@ const personalProjects = [
       "Task filtering and sorting options",
       "Responsive design for all devices",
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://todo-8b2y.onrender.com/",
+    screenshots: ["/todo/client.png", "/todo/client1.png", "/todo/client2.png"],
+    githubUrl: "https://github.com/who-0/todoapp",
+    demoUrl: "https://todoapp-y9wf.onrender.com",
   },
   {
     id: 5,
     title: "Quiz App",
-    description: "A MERN stack quiz application with multiple-choice questions and score tracking.",
+    description:
+      "A MERN stack quiz application with multiple-choice questions and score tracking.",
     fullDescription:
       "This quiz application is built using the MERN stack and provides users with a simple interface to answer multiple-choice questions. It tracks scores, provides immediate feedback, and stores user progress.",
-    image: "/placeholder.svg?height=300&width=500&text=Quiz+App",
+    image: "/mathquiz/logo.png",
     techStack: ["React", "Node.js", "Express", "MongoDB", "CSS"],
     features: [
       "Multiple choice questions with A/B answers",
@@ -151,17 +216,32 @@ const personalProjects = [
       "User progress saving",
       "Mobile-friendly design",
     ],
-    githubUrl: "https://github.com",
-    demoUrl: "https://vercel.com",
+    screenshots: [
+      "/mathquiz/client.png",
+      "/mathquiz/client1.png",
+      "/mathquiz/client2.png",
+    ],
+    githubUrl: "https://github.com/DaDDy-chilll/math-quiz",
+    demoUrl: "https://daddy-chilll.github.io/math-quiz/",
   },
   {
     id: 6,
     title: "Mini Online E-Shop",
-    description: "A full-featured e-commerce platform with product listings, cart functionality, and user accounts.",
+    description:
+      "A full-featured e-commerce platform with product listings, cart functionality, and user accounts.",
     fullDescription:
       "This e-commerce application provides a complete shopping experience with product browsing, cart management, checkout process, and order tracking. It includes user authentication, product categories, search functionality, and an admin dashboard.",
-    image: "/placeholder.svg?height=300&width=500&text=E-Shop",
-    techStack: ["React", "Express", "MongoDB", "Node.js", "Axios", "Styled Components", "Redux", "Recharts"],
+    image: "/shoppie/logo.png",
+    techStack: [
+      "React",
+      "Express",
+      "MongoDB",
+      "Node.js",
+      "Axios",
+      "Styled Components",
+      "Redux",
+      "Recharts",
+    ],
     features: [
       "User authentication and profile management",
       "Product browsing and searching",
@@ -169,17 +249,33 @@ const personalProjects = [
       "Order history and tracking",
       "Admin dashboard for product management",
     ],
-    githubUrl: "https://github.com",
+    screenshots: [
+      "/shoppie/client.png",
+      "/shoppie/client1.png",
+      "/shoppie/client2.png",
+      "/shoppie/client3.png",
+    ],
+    githubUrl: "https://github.com/who-0/shoppie",
     demoUrl: "https://shoppie-gqvo.onrender.com",
   },
   {
     id: 7,
     title: "OAuth Login System",
-    description: "A comprehensive authentication system with multiple OAuth providers and local login.",
+    description:
+      "A comprehensive authentication system with multiple OAuth providers and local login.",
     fullDescription:
       "This authentication system demonstrates various login methods including local username/password, Google OAuth, and GitHub OAuth. It includes secure session management, JWT implementation, and user profile management.",
     image: "/placeholder.svg?height=300&width=500&text=OAuth+App",
-    techStack: ["Node.js", "Express", "MongoDB", "EJS", "CSS", "Passport.js", "JWT", "Cookie Session"],
+    techStack: [
+      "Node.js",
+      "Express",
+      "MongoDB",
+      "EJS",
+      "CSS",
+      "Passport.js",
+      "JWT",
+      "Cookie Session",
+    ],
     features: [
       "Local username/password authentication",
       "Google OAuth integration",
@@ -193,7 +289,8 @@ const personalProjects = [
   {
     id: 8,
     title: "Newsletter Signup",
-    description: "A newsletter subscription system with user management and admin dashboard.",
+    description:
+      "A newsletter subscription system with user management and admin dashboard.",
     fullDescription:
       "This newsletter signup application allows visitors to subscribe to a newsletter and includes an admin interface to manage subscribers. It features form validation, email verification, and subscriber analytics.",
     image: "/placeholder.svg?height=300&width=500&text=Newsletter",
@@ -208,10 +305,10 @@ const personalProjects = [
     githubUrl: "https://github.com",
     demoUrl: "https://newsletter-c3an.onrender.com",
   },
-]
+];
 
 export default function ProjectsSection() {
-  const [activeTab, setActiveTab] = useState("all")
+  const [activeTab, setActiveTab] = useState("all");
 
   return (
     <section id="projects" className="py-20 bg-muted/30">
@@ -228,10 +325,15 @@ export default function ProjectsSection() {
             <div className="h-1 w-32 bg-primary rounded-full"></div>
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-            A showcase of my professional work and personal projects. Click on any project to see more details.
+            A showcase of my professional work and personal projects. Click on
+            any project to see more details.
           </p>
 
-          <Tabs defaultValue="all" className="w-full max-w-2xl mx-auto" onValueChange={setActiveTab}>
+          <Tabs
+            defaultValue="all"
+            className="w-full max-w-2xl mx-auto"
+            onValueChange={setActiveTab}
+          >
             <TabsList className="grid grid-cols-3 mb-8">
               <TabsTrigger value="all">All Projects</TabsTrigger>
               <TabsTrigger value="real-world">Real World</TabsTrigger>
@@ -299,5 +401,5 @@ export default function ProjectsSection() {
         )}
       </div>
     </section>
-  )
+  );
 }
