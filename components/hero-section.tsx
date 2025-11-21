@@ -193,7 +193,7 @@ export default function HeroSection() {
                     alt="Paing Sett Kyaw"
                     width={260}
                     height={260}
-                    className="object-cover w-full h-full object-[center_5340%]"
+                    className="object-cover w-full h-full object-[center_10%]"
                   />
                 </div>
                 <div className="absolute -bottom-2 -right-2 bg-background p-2 rounded-full border-2 border-primary/80">
